@@ -519,6 +519,42 @@ function App() {
           <Building2 size={24} style={{ color: 'var(--primary)' }} />
           APEX <span>BUILD MART</span>
         </a>
+
+        {/* Desktop Navigation Links */}
+        <nav className="desktop-nav-links">
+          <a 
+            href="#home" 
+            onClick={(e) => { e.preventDefault(); window.location.hash = 'home'; }} 
+            className={activeTab === 'home' ? 'active' : ''}
+          >
+            Home
+          </a>
+          <a 
+            href="#catalog" 
+            onClick={(e) => { e.preventDefault(); window.location.hash = 'catalog'; }} 
+            className={activeTab === 'catalog' ? 'active' : ''}
+          >
+            Catalog
+          </a>
+          <a 
+            href="#quote" 
+            onClick={(e) => { e.preventDefault(); window.location.hash = 'quote'; }} 
+            className={activeTab === 'quote' ? 'active' : ''}
+          >
+            Quote
+            {quoteItems.length > 0 && (
+              <span className="nav-badge-count">{pricingSummary.totalQty}</span>
+            )}
+          </a>
+          <a 
+            href="#credit" 
+            onClick={(e) => { e.preventDefault(); window.location.hash = 'credit'; }} 
+            className={activeTab === 'credit' ? 'active' : ''}
+          >
+            Credit
+          </a>
+        </nav>
+
         <div className="nav-status">
           <span className="badge badge-success">
             <span className="status-dot"></span>
